@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Jobs in Portugal - 2022</title>
+    <!-- Bootstrap CSS (Optional, for basic styling) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Optional: Add CSS for custom styling -->
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Best Jobs in Portugal - 2022</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Demand</th>
+                    <th>Salary</th>
+                    <th>Growth Prospects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IT Professionals</td>
+                    <td>High</td>
+                    <td>Competitive</td>
+                    <td>Promising</td>
+                </tr>
+                <tr>
+                    <td>Healthcare Workers</td>
+                    <td>High</td>
+                    <td>Stable</td>
+                    <td>Promising</td>
+                </tr>
+                <tr>
+                    <td>Financial Analysts</td>
+                    <td>High</td>
+                    <td>Competitive</td>
+                    <td>Promising</td>
+                </tr>
+                <tr>
+                    <td>Renewable Energy Specialists</td>
+                    <td>High</td>
+                    <td>Attractive</td>
+                    <td>Promising</td>
+                </tr>
+                <tr>
+                    <td>E-commerce & Digital Marketing Professionals</td>
+                    <td>High</td>
+                    <td>Competitive</td>
+                    <td>Promising</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="text-center mt-4">Job Attributes Bar Chart</h2>
+        <canvas id="jobChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        // Job data for the bar chart
+        const jobTitles = [
+            'IT Professionals',
+            'Healthcare Workers',
+            'Financial Analysts',
+            'Renewable Energy Specialists',
+            'E-commerce & Digital Marketing Professionals'
+        ];
+        const demandData = [4, 5, 4, 5, 4]; // High: 5, Medium: 3, Low: 1
+        const salaryData = [4, 3, 4, 5, 4]; // High: 5, Medium: 3, Low: 1
+        const growthData = [4, 4, 4, 5, 4]; // High: 5, Medium: 3, Low: 1
+
+        // Create the bar chart
+        const ctx = document.getElementById('jobChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: jobTitles,
+                datasets: [
+                    {
+                        label: 'Demand',
+                        data: demandData,
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                    },
+                    {
+                        label: 'Salary',
+                        data: salaryData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    },
+                    {
+                        label: 'Growth Prospects',
+                        data: growthData,
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
